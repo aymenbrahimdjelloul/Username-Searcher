@@ -16,7 +16,7 @@ from urllib import request
 from urllib.error import URLError
 
 
-def check_if_connect():
+def check_if_connected():
     """ this function will check if the user is connected to the internet"""
     try:
         request.urlopen('https://www.google.com', timeout=3)
