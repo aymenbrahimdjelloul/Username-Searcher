@@ -11,7 +11,7 @@ import sys
 import webbrowser
 from time import perf_counter
 from functools import partial
-from logic.Searcher import check_if_connect, NewSearch
+from logic.Searcher import check_if_connected, NewSearch
 from PyQt5.Qt import *
 
 
@@ -196,7 +196,7 @@ class App(QWidget):
 
         # start the main method
         # check if there is internet connection
-        if not check_if_connect():
+        if not check_if_connected():
             self.not_connected(None)
         else:
             self._main_(None)
@@ -258,7 +258,7 @@ class App(QWidget):
         loop.exec_()
 
         # check internet connection
-        if not check_if_connect():
+        if not check_if_connected():
             self.not_connected(self.animation_label)
         else:
             self._main_(self.animation_label)
