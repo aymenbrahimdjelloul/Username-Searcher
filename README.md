@@ -6,4 +6,4 @@
 
 ## A brief
 
-![alt text](https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/username_searcher_pic1.png)
+![alt text](https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/username_searcher_pic1.PNG)
