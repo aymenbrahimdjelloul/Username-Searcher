@@ -2,3 +2,4 @@
 
 ## Search a username across social networks with a Simple & Fast Frindely user-interface
 
+https://github.com/aymenbrahimdjelloul/Username-Searcher/images/icon.ico
