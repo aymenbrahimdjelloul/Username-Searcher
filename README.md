@@ -1,5 +1,5 @@
 # Username Searcher
-[![Download](https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/icon.ico)]((https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/download/v1.0.0-beta/Username-Searcher-0.0.1v.zip))
+[![Download]]((https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/download/v1.0.0-beta/Username-Searcher-0.0.1v.zip))
 
 ## Search a username across social networks with a Simple & Fast Frindely user-interface
 
