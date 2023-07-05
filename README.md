@@ -1,6 +1,6 @@
 # Username Searcher
-[Download Latest Version](https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/download/v1.0.0-beta/Username-Searcher-0.0.1v.zip)
-<a href="https://example.com/download-link" style="padding: 12px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Download Latest Version</a>
+[![Download Latest Version](https://img.shields.io/badge/Download-Latest-brightgreen.svg)]([https://example.com/download-link](https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/download/v1.0.0-beta/Username-Searcher-0.0.1v.zip))
+
 ## Search a username across social networks with a Simple & Fast Frindely user-interface
 
 ## A brief
