@@ -1,8 +1,8 @@
 <h1 align="center">Username Searcher</h1>
 
 [![Download Latest Version](https://img.shields.io/badge/Download-Latest-brightgreen.svg)](https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/download/v1.0.0-beta/Username-Searcher-0.0.1v.zip) 
-
 `Version 1.0.0`
+
 ## Search a username across social networks with a Simple & Fast Frindely user-interface
 
 ## A brief
