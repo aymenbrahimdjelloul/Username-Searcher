@@ -13,6 +13,6 @@
 <h2>Usage</h2>
 
 <div align="center">
-  <img src="images/username_searcher_pic1.PNG" width="300" height="600" alt="Image 1">
-  <img src="images/username_searcher_pic2.PNG" width="300" height="600" alt="Image 2">
+  <img src="images/username_searcher_pic1.PNG" width="300" height="550" alt="Image 1">
+  <img src="images/username_searcher_pic2.PNG" width="300" height="550" alt="Image 2">
 </div>
