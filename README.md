@@ -11,8 +11,9 @@
 - [x] Bug Fixes!
 
 <h2>Preview</h2>
-
+<p align="center">This is a preview showing the App in action!</p>
 <div align="center">
   <img src="images/username_searcher_pic1.PNG" width="300" height="500" alt="Image 1">
   <img src="images/username_searcher_pic2.PNG" width="300" height="500" alt="Image 2">
+  <img src="images/username_searcher_pic3.PNG" width="300" height="500" alt="Image 3"
 </div>
