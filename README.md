@@ -18,7 +18,7 @@
   <img src="images/username_searcher_pic3.PNG" width="300" height="500" alt="Image 3"
 </div>
 
-<h1 align="center">License</h1>
+<h1>License</h1>
 
 ~~~
 Copyright (c) 2023 Aymen Brahim Djelloul
