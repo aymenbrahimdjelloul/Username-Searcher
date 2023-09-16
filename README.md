@@ -17,3 +17,14 @@
   <img src="images/username_searcher_pic2.PNG" width="300" height="500" alt="Image 2">
   <img src="images/username_searcher_pic3.PNG" width="300" height="500" alt="Image 3"
 </div>
+
+<h1 align="center">License</h1>
+~~~
+Copyright (c) 2023 Aymen Brahim Djelloul
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files
+(Username Searcher), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software.
+~~~
