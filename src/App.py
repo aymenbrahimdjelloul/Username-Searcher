@@ -1,8 +1,16 @@
 #!usr/bin/env python3
 
-""""
+"""
+This code or file is pertinent to the 'Username Searcher' Project
+Copyright (c) 2023, 'Aymen Brahim Djelloul'. All rights reserved.
+Use of this source code is governed by a MIT license that can be
+found in the LICENSE file.
+
+
 @author : Aymen Brahim Djelloul.
-project date : 02.10.2022
+date : 16.09.2023
+version : 1.1
+LICENSE : MIT
 
 """
 
@@ -11,14 +19,16 @@ import sys
 import webbrowser
 from time import perf_counter
 from functools import partial
-from logic.Searcher import check_if_connected, NewSearch
-from PyQt5.Qt import *
-
+from logic.searcher import is_connected, Searcher
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import pyqtSignal, QObject
 
 # define variables
 _author_ = 'Aymen Brahim Djelloul'
-_version_ = '0.0.1'
-_release_d = '30.10.2022'
+_version_ = '1.1'
+_release_d = '16.09.2023'
 
 
 class App(QWidget):
@@ -49,15 +59,14 @@ class App(QWidget):
         # add Application Font
         QFontDatabase.addApplicationFont('resources/Assets/Cairo-Regular.ttf')
 
-
         flags_button_style = """
                 QPushButton {
                     width: 30px;
                     height: 30px;
                     border: 1px solid;
                     border-radius: 5px;
-                    border-color: #d4d4d4;
-                }
+                    border-color: transparent;
+                }  
                 QPushButton#close_btn {
                     border-to-right-radius: 8px;
                 }
@@ -66,15 +75,15 @@ class App(QWidget):
                     border-color: #bf1f1f;
                 }
                 QPushButton::hover {
-                    background-color: #b3b3b3;
-                    border-color: #b3b3b3;
+                    background-color: #dedede;
+                    border-color: #dedede;
                 }
                 """
 
         self.search_stop_btn_style = """
                 QPushButton {
-                    width: 50px;
-                    height: 50px;
+                    width: 35px;
+                    height: 35px;
                     border: 1px solid;
                     border-radius: 15px;
                     border-color: #e8e8e8;
@@ -88,17 +97,18 @@ class App(QWidget):
                 }
                 
                 QPushButton#clear_text_btn {
-                    width: 35px;
-                    height: 35px;
+                    width: 31px;
+                    height: 31px;
                     background-color: transparent;
-                    border: none;
+                    border: 1px solid;
+                    border-color: transparent;
+                    
                 }
                 
                 QPushButton#clear_text_btn::hover {
-                    border: 1px solid;
-                    border-color: #a3a3a3;
-                    border-radius: 17px;
-                    background-color: #a3a3a3;
+                    border-color: #dedede;
+                    border-radius: 7px;
+                    background-color: #dedede;
                     
                 }
                 """
@@ -170,7 +180,6 @@ class App(QWidget):
         about_button.clicked.connect(lambda: about_window.show())
         about_button.setStyleSheet(flags_button_style)
 
-
         # create a scroll area
         self.vbox = QVBoxLayout(self)
 
@@ -180,11 +189,8 @@ class App(QWidget):
          QScrollArea {
             width: 380px;
             height: 400px;
-
             border: none;
-
          }
-
         """)
 
         self.scroll_area.setLayout(self.vbox)
@@ -193,24 +199,20 @@ class App(QWidget):
         # hide the scroll area widget
         self.scroll_area.hide()
 
-
         # start the main method
         # check if there is internet connection
-        if not check_if_connected():
+        if not is_connected():
             self.not_connected(None)
         else:
             self._main_(None)
 
-
     def mousePressEvent(self, event):
         self.old_Pos = event.globalPos()
-
 
     def mouseMoveEvent(self, event):
         delta = QPoint(event.globalPos() - self.old_Pos)
         self.move(self.x() + delta.x(), self.y() + delta.y())
         self.old_Pos = event.globalPos()
-
 
     def keyPressEvent(self, event):
         """ this method will get keyboard strokes"""
@@ -221,7 +223,6 @@ class App(QWidget):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
             if self.is_username_valid():
                 self._start_search()
-
 
     @staticmethod
     def clear_widgets(widgets):
@@ -235,13 +236,11 @@ class App(QWidget):
         except TypeError:
             widgets.hide()
 
-
     @staticmethod
     def open_url(url):
         # this method to open urls
         # get the url from the search results dict
         webbrowser.open(url)
-
 
     def try_connect(self, widgets_to_clear):
         """ this method will try to re-connect when there is no internet connection"""
@@ -258,11 +257,10 @@ class App(QWidget):
         loop.exec_()
 
         # check internet connection
-        if not check_if_connected():
+        if not is_connected():
             self.not_connected(self.animation_label)
         else:
             self._main_(self.animation_label)
-
 
     def _main_(self, widgets_to_clear):
         """ this is the main window """
@@ -273,18 +271,18 @@ class App(QWidget):
         # create a search field
         self.search_field = QLineEdit(self)
         self.search_field.move(40, 70)
-        self.search_field.setFont(QFont('Sans-serif', 16))
+        self.search_field.setFont(QFont('Sans-serif', 14))
         self.search_field.textChanged.connect(self.search_field_text_changed)
         self.search_field.setStyleSheet("""
         
         QLineEdit {
             width: 300px;
-            height: 55px;
+            height: 40px;
             display: inline;
             
             border: 2px solid;
             border-radius: 5px;
-            border-color: #770fb8;
+            border-color: #683cb0;
             background-color: #e8e8e8;
             
             padding: 2px;
@@ -311,7 +309,6 @@ class App(QWidget):
         self.message_lbl.setStyleSheet('font-weight: 400;')
         self.message_lbl.hide()
 
-
         # create stop search button
         self.stop_search_btn = QPushButton(self)
         self.stop_search_btn.setIcon(QIcon('resources/Assets/stop_process_icon.png'))
@@ -327,7 +324,7 @@ class App(QWidget):
         self.clear_txt_btn = QPushButton(self)
         self.clear_txt_btn.setIcon(QIcon('resources/Assets/clear_icon.png'))
         self.clear_txt_btn.setIconSize(QSize(27, 27))
-        self.clear_txt_btn.move(357, 83)
+        self.clear_txt_btn.move(360, 78)
         self.clear_txt_btn.setCursor(Qt.PointingHandCursor)
         self.clear_txt_btn.clicked.connect(self._reset)
         self.clear_txt_btn.setObjectName('clear_text_btn')
@@ -335,10 +332,9 @@ class App(QWidget):
         # hide it
         self.clear_txt_btn.hide()
 
-
         # create animation and main page labels
         self.main_logo_lbl = QLabel(self)
-        self.main_logo_lbl.setGeometry(165, 170, 140, 140)
+        self.main_logo_lbl.setGeometry(165, 170, 125, 140)
         self.main_logo_lbl.setStyleSheet('border: none;')
 
         # load gif animation
@@ -349,9 +345,9 @@ class App(QWidget):
         # self.main_animation.start()
 
         self.main_lbl = QLabel('Search for username across Social Networks'
-                               '\n         Results will appear here as you type.', self)
+                               '\n        Results will appear here as you type.', self)
         self.main_lbl.setFont(QFont('Cairo', 11))
-        self.main_lbl.setStyleSheet('color: #4b27c2;\n'
+        self.main_lbl.setStyleSheet('color: #683cb0;\n'
                                     'font-weight: 500;')
         self.main_lbl.move(60, 310)
 
@@ -371,13 +367,11 @@ class App(QWidget):
         self.message_lbl.adjustSize()
         self.message_lbl.show()
 
-
     def _reset(self):
         self.search_field.clear()
         self.scroll_area.hide()
         self.message_lbl.hide()
         self.show_main()
-
 
     def search_field_text_changed(self):
 
@@ -400,7 +394,6 @@ class App(QWidget):
         self.main_logo_lbl.show()
         # self.main_animation.start()
 
-
     def _start_loading_animation(self, x, y, x_size, y_size):
 
         # create loading animation
@@ -420,15 +413,12 @@ class App(QWidget):
         self.loading_animation.stop()
         self.animation_label.hide()
 
-
     def _stop_search(self):
         """ this method will break the search process"""
         self.worker.stop_search()
         self.stop_search_btn.hide()
         self.search_btn.show()
         self._stop_loading_animation()
-
-
 
     def is_username_valid(self):
         """ this method will verify if the input username is valid or not"""
@@ -448,7 +438,6 @@ class App(QWidget):
             self.display_unvalid_username_msg('Enter a username !')
             return False
 
-
     def display_unvalid_username_msg(self, msg):
         """ this method will display message for username when entering a wrong string"""
 
@@ -456,7 +445,6 @@ class App(QWidget):
         self.message_lbl.setStyleSheet('color: #d91811;')
         self.message_lbl.adjustSize()
         self.message_lbl.show()
-
 
     def on_search_finish(self):
         """ this method display the search results to the user"""
@@ -487,13 +475,11 @@ class App(QWidget):
         # display search has been finished message
         self.display_message(f'Finished in {round(search_end_t - self.search_start_t, 2)} s.')
 
-
     def update_search_results(self, results: dict):
         """ this method will update the search results from thread"""
         # clear dictionary results
         self.search_results.clear()
         self.search_results.update(results)
-
 
     def _start_search(self):
         """ this method is for start the search"""
@@ -532,14 +518,11 @@ class App(QWidget):
         self.worker.finished.connect(lambda: self.update_search_results(self.worker.search_results))
         self.worker.finished.connect(self.on_search_finish)
 
-
         self.worker.finished.connect(self.my_thread.quit)
         self.worker.finished.connect(self.worker.deleteLater)
         self.my_thread.finished.connect(self.my_thread.deleteLater)
         # start thread
         self.my_thread.start()
-
-
 
     def not_connected(self, widgets_to_clear):
         """ this method for no internet connection window"""
@@ -614,18 +597,16 @@ class Worker(QObject):
         self.username_str = username_str
         self.search_object = None
 
-
     def run(self):
         # clear dictionary from the previous search
         self.search_results.clear()
 
-        self.search_object = NewSearch(self.username_str)
-        self.search_results.update(self.search_object.__search__())
+        self.search_object = Searcher(self.username_str)
+        self.search_results.update(self.search_object.new_search())
         self.finished.emit()
 
     def stop_search(self):
         self.search_object.process_killed = True
-
 
 
 class AboutWindow(QWidget):
@@ -659,17 +640,13 @@ class AboutWindow(QWidget):
             border: 1px solid;
             border-radius: 6px;
             color: #24292e;
-            background-color: #fafbfc;
+            background-color: #c9c9c9;
             border-color: #1b1f2326;
             box-shadow: rgba(27, 31, 35, 0.04)
         }
         QPushButton#github_btn {
             color: #ffffff;
             background-color: #2ea44f;
-            border-color: #1b1f2326;
-        }
-        QPushButton#github_btn::hover {
-            background-color: #2c974b;
             border-color: #1b1f2326;
         }
         
@@ -682,15 +659,15 @@ class AboutWindow(QWidget):
         """
 
         # setup about window
-        self.setWindowFlags(Qt.FramelessWindowHint)
-        self.setStyleSheet('background-color: #d9d9d9;')
+        self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint)
+        self.setStyleSheet('background-color: #e7e4ed;')
         self.setWindowTitle('About - Username Searcher')
         self.setWindowIcon(QIcon('icon.ico'))
         self.setFixedSize(400, 280)
 
         # create icon label
         icon_lbl = QLabel(self)
-        icon_lbl.setGeometry(20, 65, 50, 50)
+        icon_lbl.setGeometry(20, 85, 50, 50)
 
         # create pixmap for icon
         app_icon = QPixmap('icon.ico')
@@ -699,7 +676,7 @@ class AboutWindow(QWidget):
         icon_lbl.setScaledContents(True)
 
         # setup information's
-        title_lbl = QLabel(f'Username Searcher {_release_d} (beta Edition)', self)
+        title_lbl = QLabel(f'Username Searcher {_release_d}', self)
         title_lbl.setStyleSheet(labels_style)
         title_lbl.setObjectName('title_lbl')
         title_lbl.setFont(QFont('Cairo', 12))
@@ -718,7 +695,7 @@ class AboutWindow(QWidget):
         version_lbl.move(85, 100)
 
         # set copyright label
-        copyright_lbl = QLabel('Copyright © 2022, All rights reserved', self)
+        copyright_lbl = QLabel('Copyright © 2023, All rights reserved', self)
         copyright_lbl.setStyleSheet(labels_style)
         copyright_lbl.setFont(QFont('Cairo', 11))
         copyright_lbl.move(85, 130)
@@ -737,9 +714,18 @@ class AboutWindow(QWidget):
         github_btn.setFont(QFont('Cairo', 11))
         github_btn.setObjectName('github_btn')
         github_btn.move(215, 240)
-        github_btn.clicked.connect(lambda: webbrowser.open('https://github.com/aymenbrahimdjelloul'))
+        github_btn.clicked.connect(lambda: webbrowser.open('https://github.com/aymenbrahimdjelloul/Username-Searcher'))
         github_btn.setCursor(Qt.PointingHandCursor)
 
+        self.old_Pos = None
+
+    def mousePressEvent(self, event):
+        self.old_Pos = event.globalPos()
+
+    def mouseMoveEvent(self, event):
+        delta = QPoint(event.globalPos() - self.old_Pos)
+        self.move(self.x() + delta.x(), self.y() + delta.y())
+        self.old_Pos = event.globalPos()
 
 
 if __name__ == "__main__":
