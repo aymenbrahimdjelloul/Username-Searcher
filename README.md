@@ -10,15 +10,6 @@
 - [x] UI Inhancements
 - [x] Bug Fixes!
 
-<h2>Preview</h2>
-<p align="center">This is a preview showing the App in action!</p>
-<div align="center">
-  <img src="images/username_searcher_pic1.png" width="300" height="500" alt="Image 1">
-  <img src="images/username_searcher_pic2.png" width="300" height="500" alt="Image 2">
-  <img src="images/username_searcher_pic3.png" width="300" height="500" alt="Image 3">
-  <img src="images/username_searcher_pic4.png" width="300" height="500" alt="Image 4">
-</div>
-
 <h1>License</h1>
 
 ~~~
