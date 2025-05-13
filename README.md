@@ -1,11 +1,10 @@
 <div align="left">
-  <img src="https://github.com/aymenbrahimdjelloul/Username-Searhcer/blob/main/images/icon.png" alt="Username-Searhcer Logo" width="150" height="150">
+  <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/icon.ico" alt="Username Searcher Logo" width="100" height="100">
 </div>
 
-<a href="https://github.com/aymenbrahimdjelloul/Username-Searhcer/releases/latest">
-    <img src="https://img.shields.io/github/v/release/aymenbrahimdjelloul/Username-Searhcer?color=green&label=Download&style=for-the-badge" alt="Download Latest Release">
+<a href="https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/latest">
+    <img src="https://img.shields.io/github/v/release/aymenbrahimdjelloul/Username-Searchr?color=green&label=Download&style=for-the-badge" alt="Download Latest Release">
   </a>
-
 
 # **Username Searcher**
 
