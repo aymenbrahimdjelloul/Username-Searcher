@@ -1,6 +1,8 @@
 <div align="left">
-  <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/icon.ico" alt="Username Searcher Logo" width="100" height="100">
+  <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/icon.ico" alt="Username Searcher Logo" width="80" height="80">
 </div>
+
+<br>
 
 [![Download Latest 1.1](https://img.shields.io/badge/Download-Latest-brightgreen.svg)](https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/latest) 
 
