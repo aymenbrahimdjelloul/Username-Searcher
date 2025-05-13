@@ -2,7 +2,7 @@
   <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/icon.ico" alt="Username Searcher Logo" width="100" height="100">
 </div>
 
-<a href="https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/latest">
+<a href="https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/download/v1.1/Username-Searcher-1.1.zip">
     <img src="https://img.shields.io/github/v/release/aymenbrahimdjelloul/Username-Searchr?color=green&label=Download&style=for-the-badge" alt="Download Latest Release">
   </a>
 
