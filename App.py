@@ -757,8 +757,6 @@ class AboutWindow(QWidget):
                 font-family: 'Segoe UI';
                 font-size: 10.5pt;
             }
-            QPushButton:hover {
-                background-color: #25873d;
             }
         """)
         github_btn.clicked.connect(lambda: webbrowser.open('https://github.com/aymenbrahimdjelloul/Username-Searcher'))
