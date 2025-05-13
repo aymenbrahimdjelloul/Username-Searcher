@@ -1,16 +1,25 @@
-<h1 align="center">Username Searcher</h1>
+# **Username Searcher**
 
 [![Download Latest 1.1](https://img.shields.io/badge/Download-Latest-brightgreen.svg)](https://github.com/aymenbrahimdjelloul/Username-Searcher/releases/download/v1.0.0-beta/Username-Searcher-0.0.1v.zip) 
 
-<p>Username Searcher is a light-weight App to search your username accross social-media networks, it is faster & easy to use and also user-friendly with good looking UI</p>
+#### Username Searcher is a light-weight App to search your username accross social-media networks, it is faster & easy to use and also user-friendly with good looking UI
 
-<h2>Whats New v 1.1?</h2>
+---
+
+## Features
+
+
+
+---
+## Whats New v 1.1?
 
 - [x] Performance Improvements
 - [x] UI Inhancements
 - [x] Bug Fixes!
 
-<h1>License</h1>
+---
+
+## **License**
 
 ~~~
 Copyright (c) 2023 Aymen Brahim Djelloul
