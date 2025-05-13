@@ -10,7 +10,7 @@
 Username Searcher is a lightweight application that allows you to quickly search for your username across multiple social media platforms.
 It’s fast, easy to use, and designed with a clean, user-friendly interface for a smooth experience.
 
-### Features:
+## Features:
 
  - 🚀 Fast username lookup across popular social networks
 
