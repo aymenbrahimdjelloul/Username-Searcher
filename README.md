@@ -28,12 +28,12 @@ It’s fast, easy to use, and designed with a clean, user-friendly interface for
   <table>
     <tr>
       <td align="center">
-        <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/screenshot_1.PNG" alt="Main Interface" width="300px"/>
+        <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/screenshot_1.PNG" alt="Main Interface" width="350px"/>
         <br>
         <em>HashRipper Home</em>
       </td>
       <td align="center">
-        <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/screenshot_2.PNG" alt="Username-Searcher about" width="300px"/>
+        <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/screenshot_2.PNG" alt="Username-Searcher about" width="350px"/>
         <br>
         <em>Crack Hash</em>
       </td>
