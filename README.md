@@ -35,7 +35,7 @@ It’s fast, easy to use, and designed with a clean, user-friendly interface for
       <td align="center">
         <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/screenshot_2.PNG" alt="Username-Searcher about" width="350px"/>
         <br>
-        <em>username searcher about</em>
+        <em>about</em>
       </td>
     </tr>
   </table>
