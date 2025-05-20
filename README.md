@@ -30,12 +30,12 @@ It’s fast, easy to use, and designed with a clean, user-friendly interface for
       <td align="center">
         <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/screenshot_1.PNG" alt="Main Interface" width="350px"/>
         <br>
-        <em>HashRipper Home</em>
+        <em>Home</em>
       </td>
       <td align="center">
         <img src="https://github.com/aymenbrahimdjelloul/Username-Searcher/blob/main/images/screenshot_2.PNG" alt="Username-Searcher about" width="350px"/>
         <br>
-        <em>Crack Hash</em>
+        <em>username searcher about</em>
       </td>
     </tr>
   </table>
